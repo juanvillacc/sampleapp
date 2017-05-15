@@ -11,5 +11,10 @@ pipeline {
         echo 'Hello World Jenkins modified'
       }
     }
+    stage('Test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
   }
 }
