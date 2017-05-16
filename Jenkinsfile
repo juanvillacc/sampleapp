@@ -13,7 +13,7 @@ pipeline {
             echo 'Saludo'
             
           },
-          "": {
+          "Otener cambios": {
             git 'https://github.com/juanvillacc/sampleapp.git'
             
           }
