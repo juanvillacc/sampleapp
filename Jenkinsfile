@@ -8,12 +8,22 @@ pipeline {
   stages {
     stage('Welcome') {
       steps {
-        echo 'Hello World Jenkins modified'
+        parallel(
+          "Welcome": {
+            echo 'Saludo'
+            
+          },
+          "": {
+            git 'https://github.com/juanvillacc/sampleapp.git'
+            
+          }
+        )
       }
     }
     stage('Test') {
       steps {
         sh 'mvn test'
+        junit 'target/'
       }
     }
   }
